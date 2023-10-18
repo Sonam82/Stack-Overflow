@@ -41,14 +41,12 @@ const Auth = () => {
     <section className="auth-section">
       {isSignup && <AboutAuth />}
       <div className="auth-container-2">
-        {/* {!isSignup && ( */}
         <img
           src={icon}
           alt="Stack Overflow"
           className="login-logo"
           width={36}
         />
-        {/* )} */}
         <form onSubmit={handleSubmit}>
           {isSignup && (
             <label htmlFor="name">
