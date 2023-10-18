@@ -17,6 +17,9 @@ const Auth = () => {
 
   const handleSwitch = () => {
     setIsSignup(!isSignup);
+    setName("");
+    setEmail("");
+    setPassword("");
   };
 
   const handleSubmit = (e) => {
