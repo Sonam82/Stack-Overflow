@@ -17,6 +17,7 @@
 .user-name p {
   color: #7e7e7e;
 }
+
 .edit-profile-btn {
   padding: 8px 10px;
   border: solid 1px #7e7e7e;
@@ -25,26 +26,32 @@
   transition: 0.3s;
   cursor: pointer;
 }
+
 .edit-profile-btn:hover {
   background-color: #f5f9fc;
 }
+
 .edit-profile-title {
   padding: 20px 0px;
   border-bottom: solid 1px #dbd9d9;
 }
+
 .edit-profile-title-2 {
   color: grey;
   font-weight: 400;
 }
+
 .edit-profile-form {
   padding: 20px;
   border: solid 1px #dbd9d9;
   border-radius: 5px;
 }
+
 .edit-profile-form label h3 {
   margin: 0%;
   padding: 3px 0px;
 }
+
 .edit-profile-form label p {
   margin: 0%;
   padding: 3px 0px;
