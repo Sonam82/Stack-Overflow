@@ -88,3 +88,9 @@
 .display-tags-time .display-time {
   font-size: 13px;
 }
+@media screen and (max-width: 800px) {
+  .main-bar {
+    width: calc(100%);
+    float: none;
+  }
+}

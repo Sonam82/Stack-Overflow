@@ -64,3 +64,10 @@
   border-radius: 2px;
   font-size: 12px;
 }
+
+@media screen and (max-width: 800px) {
+  .right-sidebar {
+    float: none;
+    width: 90%;
+  }
+}

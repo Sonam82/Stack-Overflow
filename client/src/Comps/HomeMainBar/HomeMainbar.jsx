@@ -5,71 +5,6 @@ import "./HomeMainbar.css";
 import QuesList from "./QuesList";
 
 const HomeMainbar = () => {
-  // var quesLst = [
-  //   {
-  //     _id: 1,
-  //     upVotes: 2,
-  //     downvotes: 0,
-  //     noOfAns: 2,
-  //     quesTitle: "What is a function",
-  //     quesBody: "It meant to be",
-  //     quesTags: ["Java", "Node.js", "React.js", "MongoDB"],
-  //     usrPosted: "mano",
-  //     userId: 1,
-  //     askedOn: "Jan 1",
-  //     answer: [
-  //       {
-  //         answerBody: "Answer",
-  //         userAnswered: "kumar",
-  //         answeredOn: "jan 2",
-  //         userId: 2,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     _id: 2,
-  //     upVotes: 4,
-  //     downvotes: 1,
-  //     noOfAns: 0,
-  //     quesTitle: "What is a function",
-  //     quesBody: "It meant to be",
-  //     quesTags: ["JavaScript", "R", "Python"],
-  //     usrPosted: "mano",
-  //     askedOn: "Jan 1",
-  //     userId: 1,
-  //     answer: [
-  //       {
-  //         answerBody: "Answer",
-  //         userAnswered: "kumar",
-  //         answeredOn: "jan 2",
-  //         userId: 2,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     _id: 3,
-  //     upVotes: 3,
-  //     downvotes: 2,
-  //     noOfAns: 0,
-  //     quesTitle: "What is a function",
-  //     quesBody: "It meant to be",
-  //     quesTags: ["Java", "Node.js", "React.js", "MongoDB"],
-  //     usrPosted: "mano",
-  //     askedOn: "Jan 1",
-  //     userId: 1,
-  //     answer: [
-  //       {
-  //         answerBody: "Answer",
-  //         userAns: "Kumar",
-  //         UserId: 2,
-  //         answeredOn: "jan 2",
-  //       },
-  //     ],
-  //   },
-  // ];
-
-  // console.log(quesLst);
-
   const user = 1;
   const navigate = useNavigate();
   const location = useLocation();
@@ -102,7 +37,7 @@ const HomeMainbar = () => {
           <h1>Loading...</h1>
         ) : (
           <>
-            <p>{quesLst.data.length} questions</p>
+            <p>{quesLst.data.length} Questions</p>
             <QuesList quesLst={quesLst.data} />
           </>
         )}

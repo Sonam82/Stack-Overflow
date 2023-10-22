@@ -28,6 +28,7 @@ const EditProfile = ({ currentUser, setSwitch }) => {
     <div>
       <h1 className="edit-profile-title">Edit Your Profile</h1>
       <h2 className="edit-profile-title-2">Public information</h2>
+
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <label htmlFor="name">
           <h3>Display name : </h3>
