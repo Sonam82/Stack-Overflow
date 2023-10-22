@@ -1,6 +1,8 @@
 import axios from "axios";
 // import { deleteAnswer } from "../actions/question";
-const API = axios.create({ baseURL: "https://stack-overflow-flkp.onrender.com" });
+const API = axios.create({
+  baseURL: "https://stack-overflow-flkp.onrender.com",
+});
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("Profile")) {
     req.headers.authorization = `Bearer ${

@@ -18,18 +18,25 @@ const AskQuestions = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      askQuestion(
-        {
-          quesTitle,
-          quesBody,
-          quesTags,
-          userPosted: User.result.name,
-          userId: User?.result?._id,
-        },
-        navigate
-      )
-    );
+    if (User) {
+      if (quesTitle && quesBody && quesTags) {
+        dispatch(
+          askQuestion(
+            {
+              quesTitle,
+              quesBody,
+              quesTags,
+              userPosted: User.result.name,
+              userId: User?.result?._id,
+            },
+            navigate
+          )
+        );
+      } else alert("Please enter all the fields...");
+    } else {
+      alert("Login to ask question...");
+      navigate("/Auth");
+    }
   };
 
   const handleEnter = (e) => {

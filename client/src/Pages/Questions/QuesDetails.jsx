@@ -23,9 +23,7 @@ const QuesDetails = () => {
   const User = useSelector((state) => state.currentUserReducer);
   const location = useLocation();
 
-  const url = "http://localhost:5000";
-
-  // const url = "https://stack-overflow-flkp.onrender.com";
+  const url = "https://stack-overflow-flkp.onrender.com";
 
   const handlePostAns = (e, ansLength) => {
     e.preventDefault();
@@ -119,7 +117,7 @@ const QuesDetails = () => {
                         <div>
                           <p>asked {moment(ques.askedOn).fromNow()}</p>
                           <Link
-                            to={`/User/${ques.userId}`}
+                            to={`/Users/${User?.result?._id}`}
                             className="user-link"
                             style={{ color: "#0086d8" }}
                           >
