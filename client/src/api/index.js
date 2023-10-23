@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost" /*https://stack-overflow-flkp.onrender.com*/,
+  baseURL: "http://localhost:5000",
+  /*https://stack-overflow-flkp.onrender.com*/
 });
 
 API.interceptors.request.use((req) => {

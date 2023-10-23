@@ -24,8 +24,7 @@ const QuesDetails = () => {
   const User = useSelector((state) => state.currentUserReducer);
   const location = useLocation();
 
-  const url =
-    "http://localhost:3000"; /*https://stack-overflow-flkp.onrender.com*/
+  const url = "https://stack-overflow-flkp.onrender.com";
 
   const handlePostAns = (e, ansLength) => {
     e.preventDefault();
