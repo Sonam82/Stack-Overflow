@@ -22,6 +22,7 @@ const QuesDetails = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const User = useSelector((state) => state.currentUserReducer);
+
   const location = useLocation();
 
   const url = "https://stack-overflow-flkp.onrender.com";
@@ -118,7 +119,7 @@ const QuesDetails = () => {
                         <div>
                           <p>asked {moment(ques.askedOn).fromNow()}</p>
                           <Link
-                            to={`/Users/${User?.result?._id}`}
+                            to={`/Users/${ques.userId}`}
                             className="user-link"
                             style={{ color: "#0086d8" }}
                           >

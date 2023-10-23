@@ -2,7 +2,7 @@
   width: calc(100% - 300px - 24px);
   float: left;
   margin: 25px 0px;
-  padding: 0px;
+  padding: 10px;
 }
 
 .ques-details-container {
