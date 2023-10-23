@@ -6,6 +6,7 @@ import moment from "moment";
 import copy from "copy-to-clipboard";
 
 import "./Questions.css";
+
 import upVote from "../../assets/sort-up.svg";
 import downVote from "../../assets/sort-down.svg";
 import Avtar from "../../Comps/Avtar/Avtar";
@@ -23,7 +24,8 @@ const QuesDetails = () => {
   const User = useSelector((state) => state.currentUserReducer);
   const location = useLocation();
 
-  const url = "http://localhost"; /*https://stack-overflow-flkp.onrender.com*/
+  const url =
+    "http://localhost:3000"; /*https://stack-overflow-flkp.onrender.com*/
 
   const handlePostAns = (e, ansLength) => {
     e.preventDefault();

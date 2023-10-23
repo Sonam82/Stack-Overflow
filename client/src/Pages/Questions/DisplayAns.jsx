@@ -1,11 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+
 import Avtar from "../../Comps/Avtar/Avtar";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAnswer } from "../../actions/question";
 
 import "./Questions.css";
+
 const DisplayAns = ({ ques, handleShare }) => {
   const User = useSelector((state) => state.currentUserReducer);
   const { id } = useParams();
@@ -41,7 +43,7 @@ const DisplayAns = ({ ques, handleShare }) => {
                 className="user-link"
                 style={{ color: "#0086d8" }}
               >
-                <Avtar backgroundColor={"green"} px="8px" py="5px">
+                <Avtar backgroundColor={"lightgreen"} px="8px" py="5px">
                   {ans.userAns.charAt(0).toUpperCase()}
                 </Avtar>
                 <div>{ans.userAns}</div>

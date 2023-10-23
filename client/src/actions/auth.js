@@ -5,6 +5,7 @@ import { fetchAllUsers } from "./users";
 export const signup = (authData, navigate) => async (dispatch) => {
   try {
     const { data } = await api.signUp(authData);
+
     dispatch({ type: "AUTH", data });
     dispatch(setCurrentUser(JSON.parse(localStorage.getItem("Profile"))));
     dispatch(fetchAllUsers());
