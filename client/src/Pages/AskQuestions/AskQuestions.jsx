@@ -40,7 +40,7 @@ const AskQuestions = () => {
   };
 
   const handleEnter = (e) => {
-    if (e.key === "Enter") {
+    if (e.keyCode === 13) {
       setQuesBody(quesBody + "\n");
     }
   };
@@ -76,7 +76,7 @@ const AskQuestions = () => {
               <textarea
                 id="ask-ques-body"
                 rows="9"
-                onKeyPress={handleEnter}
+                onKeyDown={handleEnter}
                 onChange={(e) => {
                   setQuesBody(e.target.value);
                 }}
