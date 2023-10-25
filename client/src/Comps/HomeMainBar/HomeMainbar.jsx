@@ -34,7 +34,14 @@ const HomeMainbar = () => {
       </div>
       <div>
         {quesLst.data === null ? (
-          <h1>Loading...</h1>
+          <div class="loading">
+            <p> Loading</p>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         ) : (
           <>
             <p>{quesLst.data.length} Questions</p>

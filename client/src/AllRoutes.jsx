@@ -8,6 +8,7 @@ import DisplayQues from "./Pages/Questions/DisplayQues";
 import Tags from "./Pages/Tags/Tags";
 import Users from "./Pages/Users/Users";
 import UserProfile from "./Pages/UserProfile/UserProfile";
+import About from "./Pages/About/About";
 
 const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
       <Route path="/Tags" element={<Tags />} />
       <Route path="/Users" element={<Users />} />
       <Route path="/Users/:id" element={<UserProfile />} />
+      <Route path="/About" Component={About} />
     </Routes>
   );
 };
