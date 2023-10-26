@@ -13,6 +13,7 @@ const VideoPlayer = () => {
   //     videoRef.current.seekTo(videoRef.current.getCurrentTime() + 10),
   // });
   const [doubleTapCount, setDoubleTapCount] = React.useState(0);
+  const [doubleScreenCount, setDoubleScreenCount] = React.useState(0);
 
   const handleMouseDown = (e) => {
     if (
@@ -35,9 +36,39 @@ const VideoPlayer = () => {
     }
   };
 
+  const handleScreenHold = (progress) => {
+    if (doubleScreenCount === 2) {
+      // If two taps were detected, move the video forward by 10 seconds
+      const currentTime = videoRef.current.getCurrentTime();
+      videoRef.current.seekTo(currentTime + progress);
+    }
+  };
+
+  const handleTouchStart = (ev) => {
+    let screenx = ev.changedTouches[0]["screenX"];
+    // console.log(ev.changedTouches[0]["screenX"]);
+    if (screenx > videoRef.current.getInternalPlayer().videoWidth / 2) {
+      setDoubleScreenCount(doubleScreenCount + 1);
+      setTimeout(() => {
+        setDoubleScreenCount(0);
+      }, 300); // Reset the count after 300 milliseconds
+
+      handleScreenHold(10);
+    } else if (screenx < videoRef.current.getInternalPlayer().videoWidth / 2) {
+      setDoubleScreenCount(doubleScreenCount + 1);
+      setTimeout(() => {
+        setDoubleScreenCount(0);
+      }, 300);
+      handleScreenHold(-5);
+    }
+  };
+
   return (
     <div>
       <ReactPlayer
+        onTouchStart={(e) => handleTouchStart(e)}
+        // onKeyUp={(e) => console.log(e.code)}
+        // onKeyDown={(e) => console.log(e.code)}
         ref={videoRef}
         url={video}
         controls
