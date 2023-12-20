@@ -13,7 +13,8 @@
 }
 
 .login-logo {
-  padding: 20px 30px;
+  margin-top: 12px;
+  padding: 20px 0px;
 }
 
 .auth-container-2 {
@@ -22,6 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 36px;
 }
 
 .auth-container-2 form {
@@ -82,4 +84,10 @@
   border: none;
   font-size: 13px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .auth-container-1 {
+    display: none;
+  }
 }
