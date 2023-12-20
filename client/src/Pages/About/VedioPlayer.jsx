@@ -6,7 +6,7 @@ import ReactPlayer from "react-player";
 import video from "../../assets/Intro.mp4";
 
 const VideoPlayer = () => {
-  // const videoRef = useRef(null);
+  const videoRef = useRef(null);
 
   // const [doubleScreenCount, setDoubleScreenCount] = useState(0);
 
@@ -58,7 +58,7 @@ const VideoPlayer = () => {
         // light
         // onTouchStart={(e) => handleTouchStart(e)}
         // onTouchEnd={handleTouchEnd}
-        // ref={videoRef}
+        ref={videoRef}
         url={video}
         controls
         width={"90%"}
