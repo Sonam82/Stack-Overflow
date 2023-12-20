@@ -1,79 +1,68 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 // import { useGesture } from "@use-gesture/react";
 
 import ReactPlayer from "react-player";
 import video from "../../assets/Intro.mp4";
+
 const VideoPlayer = () => {
-  const videoRef = useRef(null);
-  // const controls = useGesture({
-  //   onSwipeLeft: () =>
-  //     videoRef.current.seekTo(videoRef.current.getCurrentTime() - 10),
-  //   onSwipeRight: () =>
-  //     videoRef.current.seekTo(videoRef.current.getCurrentTime() + 10),
-  // });
-  const [doubleTapCount, setDoubleTapCount] = React.useState(0);
-  const [doubleScreenCount, setDoubleScreenCount] = React.useState(0);
+  // const videoRef = useRef(null);
 
-  const handleMouseDown = (e) => {
-    if (
-      e.nativeEvent.offsetX >
-      videoRef.current.getInternalPlayer().videoWidth / 2
-    ) {
-      // If the tap is on the right side of the video
-      setDoubleTapCount(doubleTapCount + 1);
-      setTimeout(() => {
-        setDoubleTapCount(0);
-      }, 300); // Reset the count after 300 milliseconds
-    }
-  };
+  // const [doubleScreenCount, setDoubleScreenCount] = useState(0);
 
-  const handleMouseUp = () => {
-    if (doubleTapCount === 2) {
-      // If two taps were detected, move the video forward by 10 seconds
-      const currentTime = videoRef.current.getCurrentTime();
-      videoRef.current.seekTo(currentTime + 10);
-    }
-  };
+  // const handleScreenHold = (progress) => {
+  //   if (doubleScreenCount === 2) {
+  //     const currentTime = videoRef.current.getCurrentTime();
+  //     const changement = currentTime + progress;
+  //     videoRef.current.seekTo(changement);
+  //     console.log(`i am active ${currentTime} now changed by ${changement}`);
+  //   }
+  // };
 
-  const handleScreenHold = (progress) => {
-    if (doubleScreenCount === 2) {
-      // If two taps were detected, move the video forward by 10 seconds
-      const currentTime = videoRef.current.getCurrentTime();
-      videoRef.current.seekTo(currentTime + progress);
-    }
-  };
+  // const handleTouchStart = (ev) => {
+  //   // ev.stopImmediatePropagation();
+  //   let screenx = ev.changedTouches[0]["screenX"];
 
-  const handleTouchStart = (ev) => {
-    let screenx = ev.changedTouches[0]["screenX"];
-    // console.log(ev.changedTouches[0]["screenX"]);
-    if (screenx > videoRef.current.getInternalPlayer().videoWidth / 2) {
-      setDoubleScreenCount(doubleScreenCount + 1);
-      setTimeout(() => {
-        setDoubleScreenCount(0);
-      }, 300); // Reset the count after 300 milliseconds
+  //   let MidWidth = videoRef.current.offsetWidth / 2;
 
-      handleScreenHold(10);
-    } else if (screenx < videoRef.current.getInternalPlayer().videoWidth / 2) {
-      setDoubleScreenCount(doubleScreenCount + 1);
-      setTimeout(() => {
-        setDoubleScreenCount(0);
-      }, 300);
-      handleScreenHold(-5);
-    }
-  };
+  //   if (screenx > MidWidth) {
+  //     setDoubleScreenCount((doubleScreenCount) => doubleScreenCount + 1);
+
+  //     handleScreenHold(0);
+
+  //     setTimeout(() => {
+  //       setDoubleScreenCount(0);
+  //     }, 3000);
+
+  //     console.log(
+  //       `${screenx} Right Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
+  //     );
+  //   } else {
+  //     setDoubleScreenCount((doubleScreenCount) => doubleScreenCount + 1);
+
+  //     handleScreenHold(-5);
+
+  //     setTimeout(() => {
+  //       setDoubleScreenCount(0);
+  //     }, 3000);
+
+  //     console.log(
+  //       `${screenx} Left Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
+  //     );
+  //   }
+  // };
 
   return (
     <div>
       <ReactPlayer
-        onTouchStart={(e) => handleTouchStart(e)}
-        // onKeyUp={(e) => console.log(e.code)}
-        // onKeyDown={(e) => console.log(e.code)}
-        ref={videoRef}
+        // light
+        // onTouchStart={(e) => handleTouchStart(e)}
+        // onTouchEnd={handleTouchEnd}
+        // ref={videoRef}
         url={video}
         controls
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
+        width={"90%"}
+        height={"90%"}
       />
     </div>
   );
