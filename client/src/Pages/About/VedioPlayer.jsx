@@ -10,11 +10,11 @@ const VideoPlayer = () => {
 
   // const [doubleScreenCount, setDoubleScreenCount] = useState(0);
 
-  // const handleScreenHold = () => {
+  // const handleScreenHold = (progress) => {
   //   if (doubleScreenCount === 2) {
   //     const currentTime = videoRef.current.getCurrentTime();
-  //     // const changement = currentTime + progress;
-  //     videoRef.current.seekTo(currentTime + 10);
+  //     const changement = currentTime + progress;
+  //     videoRef.current.seekTo(changement);
   //     // console.log(`i am active ${currentTime} now changed by ${changement}`);
   //   }
   // };
@@ -23,24 +23,24 @@ const VideoPlayer = () => {
   //   // ev.stopImmediatePropagation();
   //   let screenx = ev.changedTouches[0]["screenX"];
 
-  //   let MidWidth = videoRef.current.getInternalPlayer().videoWidth / 2;
+  //   let MidWidth = videoRef.current.getInternalPlayer().videoWidth / 2; //videoRef.current.offsetWidth / 2;
 
   //   if (screenx > MidWidth) {
   //     setDoubleScreenCount((doubleScreenCount) => doubleScreenCount + 1);
 
-  //     handleScreenHold();
+  //     handleScreenHold(0);
 
   //     setTimeout(() => {
   //       setDoubleScreenCount(0);
   //     }, 3000);
 
-  //     // console.log(
-  //     //   `${screenx} Right Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
-  //     // );
+  //     console.log(
+  //       `${screenx} Right Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
+  //     );
   //   } else {
   //     setDoubleScreenCount((doubleScreenCount) => doubleScreenCount + 1);
 
-  //     handleScreenHold();
+  //     handleScreenHold(-5);
 
   //     setTimeout(() => {
   //       setDoubleScreenCount(0);
@@ -54,15 +54,7 @@ const VideoPlayer = () => {
 
   return (
     <div>
-      <ReactPlayer
-         //onTouchStart={(e) => handleTouchStart(e)}
-        // onTouchEnd={handleTouchEnd}
-        //ref={videoRef}
-        url={video}
-        controls
-        width={"90%"}
-        height={"90%"}
-      />
+      <ReactPlayer url={video} controls width={"90%"} height={"90%"} />
     </div>
   );
 };
