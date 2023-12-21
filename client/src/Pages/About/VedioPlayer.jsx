@@ -13,8 +13,8 @@ const VideoPlayer = () => {
   const handleScreenHold = () => {
     if (doubleScreenCount === 2) {
       const currentTime = videoRef.current.getCurrentTime();
-      const changement = currentTime + progress;
-      videoRef.current.seekTo(changement);
+      // const changement = currentTime + progress;
+      videoRef.current.seekTo(currentTime + 10);
       // console.log(`i am active ${currentTime} now changed by ${changement}`);
     }
   };
@@ -28,27 +28,27 @@ const VideoPlayer = () => {
     if (screenx > MidWidth) {
       setDoubleScreenCount((doubleScreenCount) => doubleScreenCount + 1);
 
-      handleScreenHold(0);
+      handleScreenHold();
 
       setTimeout(() => {
         setDoubleScreenCount(0);
       }, 3000);
 
-      console.log(
-        `${screenx} Right Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
-      );
+      // console.log(
+      //   `${screenx} Right Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
+      // );
     } else {
       setDoubleScreenCount((doubleScreenCount) => doubleScreenCount + 1);
 
-      handleScreenHold(-5);
+      handleScreenHold();
 
       setTimeout(() => {
         setDoubleScreenCount(0);
       }, 3000);
 
-      console.log(
-        `${screenx} Left Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
-      );
+      // console.log(
+      //   `${screenx} Left Side ${MidWidth}, now u clicked me by ${doubleScreenCount}`
+      // );
     }
   };
 
