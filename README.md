@@ -1,10 +1,10 @@
 # `npm install`
 
-If you are using "npm" as package manager than use the above command on he client side to install all dependencies
+If you are using "npm" as package manager than use the above command on the client side to install all dependencies
 
 # `yarn install`
 
-If you are using "yarn" as package manager than use the above command on he client side to install all dependencies
+If you are using "yarn" as package manager than use the above command on the client side to install all dependencies
 
 # `npm start`
 
